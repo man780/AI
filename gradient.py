@@ -25,3 +25,21 @@ delta = pred - true
 
 print(f"input: {input}, pred: {pred}")
 print(f"error: {error}, delta: {delta}")
+
+def ele_mul(number,vector):
+    output = [0,0,0]
+    assert(len(output) == len(vector))
+    for i in range(len(vector)): 
+        output[i] = number * vector[i]
+    return output
+
+
+input = [toes[0],wlrec[0],nfans[0]] 
+pred = neural_network(input, weights) 
+error = (pred - true) ** 2
+delta = pred - true
+weight_deltas = ele_mul(delta,input)
+
+print(f"input: {input}, pred: {pred}")
+print(f"error: {error}, delta: {delta}")
+print(f"weight_deltas: {weight_deltas}")
